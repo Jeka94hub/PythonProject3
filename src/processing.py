@@ -1,4 +1,11 @@
 def filter_by_state(records, state='EXECUTED'):
+    """Фильтрует список записей по заданному состоянию.
+       Args:
+           records (list): список словарей, каждый из которых должен содержать ключ 'state'.
+           state (str): состояние, по которому фильтруются записи (по умолчанию 'EXECUTED').
+       Returns:
+           list: список словарей, удовлетворяющих условию фильтрации.
+       """
     return [record for record in records if record.get('state') == state]
 
 data = [
@@ -16,13 +23,10 @@ print("CANCELED:", canceled_records)
 
 
 def sort_by_date(records, descending=True):
-    """
-    Сортирует список словарей по ключу 'date'.
-
+    """Сортирует список словарей по ключу 'date'.
     Args:
         records (list): список словарей, каждый из которых содержит ключ 'date'.
         descending (bool): направление сортировки. True — по убыванию, False — по возрастанию.
-
     Returns:
         list: отсортированный список словарей.
     """
