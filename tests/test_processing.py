@@ -53,7 +53,7 @@ def test_sort_by_date():
     ]
 
     # Тест 1: сортировка по возрастанию (по умолчанию)
-    result = sort_by_date(data)
+    result = sort_by_date(data,descending=False)
     expected = [
         {'id': 2, 'date': '2023-09-15T09:00:00'},
         {'id': 4, 'date': '2023-09-20T12:30:00'},
@@ -84,5 +84,10 @@ def test_sort_by_date():
     assert result_no_date == data_no_date, f"Ошибка в Тесте 4: ожидаемый {data_no_date}, полученный {result_no_date}"
 
 # Запускаем тесты
-test_sort_by_date()
-print("Все тесты пройдены успешно.")
+def run_tests():
+    test_filter_by_state()
+    test_sort_by_date()
+    print("Все тесты пройдены успешно.")
+
+if __name__ == "__main__":
+    run_tests()

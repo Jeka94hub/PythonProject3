@@ -1,7 +1,4 @@
 import re
-from datetime import datetime
-from masks import get_mask_card_number, get_mask_account  # импорт функций из masks
-
 
 def mask_account_card(s: str) -> str:
     """
