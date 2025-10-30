@@ -1,9 +1,22 @@
 import re
-from datetime import datetime
-from masks import get_mask_card_number, get_mask_account  # импорт функций из masks
-
 
 def mask_account_card(s: str) -> str:
+    """
+      Маскирует номер счета или карты, переданный в виде строки.
+      Определяет тип (счет или карта) по содержанию входной строки,
+      извлекает номер, применяет соответствующую маскировку и возвращает
+      строку с типом и замаскированным номером.
+
+      Args:
+          s (str): строка, содержащая тип (например, "Счет" или название карты)
+                   и номер, который нужно замаскировать.
+
+      Returns:
+          str: строка с типом и замаскированным номером.
+
+      Raises:
+          ValueError: если входная строка не содержит номера.
+      """
     match = re.search(r"(\d+)$", s.strip())
     if not match:
         raise ValueError("Входная строка не содержит номера")
@@ -20,6 +33,16 @@ def mask_account_card(s: str) -> str:
 
 
 def get_date(date_str: str) -> str:
+    """ Преобразует строку с датой из ISO-формата в формат "день.месяц.год".
+        Args:
+            date_str (str): дата в формате ISO 8601, например, "2024-03-11T02:26:18.671407".
+
+        Returns:
+            str: дата в формате "день.месяц.год".
+
+        Raises:
+            ValueError: если входная строка не соответствует формату ISO-8601.
+        """
     try:
         dt = datetime.fromisoformat(date_str)
     except ValueError:
