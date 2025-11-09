@@ -1,69 +1,59 @@
 import pytest
 from src.generators import filter_by_currency, transaction_descriptions, card_number_generator
 
+# Пример транзакций
+sample_transactions = [
+    {"id": 1, "amount": 100, "currency": "USD", "description": "Оплата подписки"},
+    {"id": 2, "amount": 250, "currency": "EUR", "description": "Покупка билета"},
+    {"id": 3, "amount": 75, "currency": "USD", "description": "Чай"},
+    {"id": 4, "amount": 300, "currency": "RUB", "description": "Кофе"},
+]
 
-@pytest.fixture
-def sample_transactions():
-    """Пример набора транзакций для тестов."""
-    return [
-        {"id": 1, "amount": 100, "currency": "USD", "description": "Оплата подписки"},
-        {"id": 2, "amount": 250, "currency": "EUR", "description": "Покупка билета"},
-        {"id": 3, "amount": 75, "currency": "USD", "description": "Чай"},
-        {"id": 4, "amount": 300, "currency": "RUB", "description": "Кофе"},
+# ------------------------------
+# Тесты filter_by_currency
+# ------------------------------
+@pytest.mark.parametrize(
+    "currency, expected_count",
+    [
+        ("USD", 2),
+        ("EUR", 1),
+        ("RUB", 1),
+        ("GBP", 0),  # случай, когда совпадений нет
     ]
+)
+def test_filter_by_currency_various(currency, expected_count):
+    result = list(filter_by_currency(sample_transactions, currency))
+    assert len(result) == expected_count
+    assert all(t.get("currency") == currency for t in result)
 
 
-def test_filter_by_currency_usd(sample_transactions):
-    """Проверяем фильтрацию по валюте USD."""
-    result = list(filter_by_currency(sample_transactions, "USD"))
-    assert len(result) == 2
-    assert all(t["currency"] == "USD" for t in result)
-
-
-def test_filter_by_currency_no_match(sample_transactions):
-    """Проверяем поведение, если нет совпадений по валюте."""
-    result = list(filter_by_currency(sample_transactions, "GBP"))
-    assert result == []
-
-
-def test_transaction_descriptions(sample_transactions):
-    """Проверяем генерацию описаний транзакций."""
-    descriptions = list(transaction_descriptions(sample_transactions))
-    expected = ["Оплата подписки", "Покупка билета", "Чай", "Кофе"]
-    assert descriptions == expected
-
-
-def test_transaction_descriptions_missing_field():
-    """Проверяем, что пропуск описания не ломает генератор."""
-    data = [
-        {"id": 1, "currency": "USD"},
-        {"id": 2, "currency": "EUR", "description": "Есть описание"},
+# ------------------------------
+# Тесты transaction_descriptions
+# ------------------------------
+@pytest.mark.parametrize(
+    "transactions, expected",
+    [
+        (sample_transactions, ["Оплата подписки", "Покупка билета", "Чай", "Кофе"]),
+        ([{"id": 1}, {"id": 2, "description": "Есть описание"}], ["Есть описание"]),
+        ([], []),  # пустой список
     ]
-    result = list(transaction_descriptions(data))
-    assert result == ["Есть описание"]
+)
+def test_transaction_descriptions_various(transactions, expected):
+    result = list(transaction_descriptions(transactions))
+    assert result == expected
 
 
-def test_card_number_generator_basic():
-    """Проверяем корректность генерации номеров карт."""
-    cards = list(card_number_generator(1234, 1237))
-    assert cards == [
-        "**** **** **** 1234",
-        "**** **** **** 1235",
-        "**** **** **** 1236",
+# ------------------------------
+# Тесты card_number_generator
+# ------------------------------
+@pytest.mark.parametrize(
+    "start, stop, expected",
+    [
+        (1, 4, ["**** **** **** 0001", "**** **** **** 0002", "**** **** **** 0003"]),
+        (1234, 1237, ["**** **** **** 1234", "**** **** **** 1235", "**** **** **** 1236"]),
+        (1000, 1000, []),  # start == stop
     ]
-
-
-def test_card_number_generator_padding():
-    """Проверяем добавление ведущих нулей для коротких номеров."""
-    cards = list(card_number_generator(1, 4))
-    assert cards == [
-        "**** **** **** 0001",
-        "**** **** **** 0002",
-        "**** **** **** 0003",
-    ]
-
-
-def test_card_number_generator_empty():
-    """Проверяем, что генератор возвращает пустой результат при start == stop."""
-    cards = list(card_number_generator(1000, 1000))
-    assert cards == []
+)
+def test_card_number_generator_various(start, stop, expected):
+    result = list(card_number_generator(start, stop))
+    assert result == expected
