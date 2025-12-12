@@ -6,6 +6,7 @@ authors = [{name = "Evgenii", email ="evgeniicebanica94@gmail.com"}]
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "python-dotenv (>=1.2.1,<2.0.0)"
 ]
 
 
