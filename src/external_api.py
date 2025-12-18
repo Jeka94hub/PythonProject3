@@ -1,44 +1,31 @@
 import os
 import requests
-from dotenv import load_dotenv
 
-load_dotenv()
+API_TOKEN = os.getenv('EXCHANGE_API_TOKEN')
 
-API_KEY = os.getenv("EXCHANGE_API_KEY")
-BASE_URL = "https://api.apilayer.com/exchangerates_data/convert"
-
-
-class CurrencyConversionError(Exception):
-    pass
-
-
-def convert_to_rub(amount: float, currency: str) -> float:
-    """
-    Конвертирует сумму из USD или EUR в RUB через Exchange Rates Data API.
-    """
-    if currency == "RUB":
-        return amount
-
-    if API_KEY is None:
-        raise CurrencyConversionError("API key not found in environment variables")
-
+def get_exchange_rates():
+    url = "https://api.apilayer.com/exchangerates_data/latest"
+    headers = {"apikey": API_TOKEN}
     params = {
-        "to": "RUB",
-        "from": currency,
-        "amount": amount
+        "symbols": "USD,EUR",
+        "base": "RUB"
     }
-
-    headers = {"apikey": API_KEY}
-
-    response = requests.get(BASE_URL, params=params, headers=headers)
-
-    if response.status_code != 200:
-        raise CurrencyConversionError("API request failed")
-
+    response = requests.get(url, headers=headers, params=params)
+    response.raise_for_status()
     data = response.json()
+    return data['rates']
 
-    if "result" not in data:
-        raise CurrencyConversionError("Invalid API response")
-
-    return float(data["result"])
-
+def convert_to_rubles(amount, currency):
+    """
+    Конвертирует сумму из валюты currency в рубли с помощью API.
+    """
+    rates = get_exchange_rates()
+    if currency == 'RUB':
+        return float(amount)
+    elif currency in ('USD', 'EUR'):
+        rate = rates.get(currency)
+        if rate is None:
+            raise ValueError(f"Нет курса для валюты {currency}")
+        return float(amount) * rate
+    else:
+        raise ValueError(f"Неизвестная валюта: {currency}")

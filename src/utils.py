@@ -1,28 +1,34 @@
 import json
 import os
-from typing import List, Dict, Any
+from .external_api import convert_to_rubles
 
-def load_transactions(relative_path: str) -> List[Dict[str, Any]]:
-    base_dir = os.path.dirname(os.path.abspath(__file__))
-    file_path = os.path.join(base_dir, "..", "data", "operations.json")
-    file_path = os.path.normpath(file_path)
-
-    if not os.path.isfile(file_path):
+def load_transactions_from_file(file_path):
+    """
+    Загружает список транзакций из файла JSON.
+    Возвращает пустой список, если файл пустой, содержит не список или не найден.
+    """
+    if not os.path.exists(file_path):
         return []
 
     try:
-        with open(file_path, "r", encoding="utf-8") as f:
-            raw = f.read().strip()
-            if not raw:
-                return []
-            data = json.loads(raw)
-    except Exception:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            data = json.load(f)
+        if isinstance(data, list):
+            return data
+        else:
+            return []
+    except (json.JSONDecodeError, FileNotFoundError):
         return []
 
-    return data if isinstance(data, list) else []
 
 
 
-if __name__ == "__main__":
-    data = load_transactions("../data/operation.json")
-    print(data)
+from external_api import convert_to_rubles
+
+def get_transaction_amount_in_rubles(transaction):
+    """
+    Принимает словарь транзакции и возвращает сумму в рублях (float).
+    """
+    amount = float(transaction['amount'])
+    currency = transaction['currency']
+    return convert_to_rubles(amount, currency)
