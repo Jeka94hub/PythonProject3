@@ -29,3 +29,5 @@ def convert_to_rubles(amount, currency):
         return float(amount) * rate
     else:
         raise ValueError(f"Неизвестная валюта: {currency}")
+
+

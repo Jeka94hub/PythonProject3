@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ecbe32-cd5d-4fcd-8613-926b8eee595d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/tests/test_utils.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/external_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/external_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_external_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_external_api.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/transaction.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_transaction.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_transaction.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -44,6 +43,7 @@
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "Python tests.pytest for tests.test_generators.test_card_number_generator_various.executor": "Run",
     "Python tests.pytest in test_external_api.py.executor": "Run",
+    "Python tests.pytest in test_transaction.py.executor": "Run",
     "Python tests.pytest in test_utils.py.executor": "Run",
     "Python.utils.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -53,7 +53,7 @@
     "settings.editor.selected.configurable": "com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable"
   }
 }]]></component>
-  <component name="RunManager" selected="Python tests.pytest in test_external_api.py">
+  <component name="RunManager" selected="Python tests.pytest in test_transaction.py">
     <configuration name="utils" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject3_widget" />
       <option name="ENV_FILES" value="" />
@@ -128,6 +128,23 @@
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
+    <configuration name="pytest in test_transaction.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject3_widget" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="_new_keywords" value="&quot;&quot;" />
+      <option name="_new_parameters" value="&quot;&quot;" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_transaction.py&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
     <configuration name="pytest in test_utils.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
       <module name="PythonProject3_widget" />
       <option name="ENV_FILES" value="" />
@@ -148,12 +165,14 @@
     <list>
       <item itemvalue="Python.utils" />
       <item itemvalue="Python tests.pytest in PyCharm 2025.2.0.1" />
+      <item itemvalue="Python tests.pytest in test_transaction.py" />
       <item itemvalue="Python tests.pytest for tests.test_generators.test_card_number_generator_various" />
       <item itemvalue="Python tests.pytest in test_external_api.py" />
       <item itemvalue="Python tests.pytest in test_utils.py" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python tests.pytest in test_transaction.py" />
         <item itemvalue="Python tests.pytest in test_external_api.py" />
         <item itemvalue="Python tests.pytest in test_utils.py" />
         <item itemvalue="Python tests.pytest for tests.test_generators.test_card_number_generator_various" />
