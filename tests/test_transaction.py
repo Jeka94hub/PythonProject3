@@ -1,39 +1,61 @@
+# Тест с использованием встроенного модуля unittest
 import unittest
-from unittest.mock import patch
+from src.external_api import convert_to_rubles
 from src.transaction import get_transaction_amount
 
+# Мокаем функцию convert_to_rubles
+def mock_convert_to_rubles(amount, currency):
+    rates = {"USD": 70, "EUR": 80, "RUB": 1}
+    return amount * rates.get(currency, 1)
 
-class TestTransactionAmount(unittest.TestCase):
+class TestGetTransactionAmount(unittest.TestCase):
+    def setUp(self):
+        global convert_to_rubles
+        self._original_convert = convert_to_rubles
+        convert_to_rubles = mock_convert_to_rubles
 
-    @patch('external_api.convert_to_rubles')
-    def test_get_transaction_amount(self, mock_convert):
-        # Настраиваем возврат функции mock
-        mock_convert.side_effect = lambda amount, currency: amount * (70 if currency == 'USD' else 1)
+    def tearDown(self):
+        global convert_to_rubles
+        convert_to_rubles = self._original_convert
 
-        # Тестовая транзакция
+    def test_valid_transaction(self):
         transaction = {
-            "id": 1,
-            "state": "EXECUTED",
-            "date": "2023-10-10T10:00:00",
             "operationAmount": {
-                "amount": "10",
+                "amount": "100",
                 "currency": {"name": "USD", "code": "USD"}
             }
         }
-
         result = get_transaction_amount(transaction)
-        self.assertEqual(result, 10 * 70)  # Ожидаемый результат: 700
+        self.assertEqual(result, 7000)  # 100 * 70
 
-        # Еще один тест — для случая, когда валюта — RUB
-        transaction_rub = {
+    def test_missing_amount(self):
+        transaction = {
             "operationAmount": {
-                "amount": "5",
-                "currency": {"name": "RUB", "code": "RUB"}
+                "currency": {"name": "USD", "code": "USD"}
             }
         }
+        with self.assertRaises(ValueError):
+            get_transaction_amount(transaction)
 
-        result_rub = get_transaction_amount(transaction_rub)
-        self.assertEqual(result_rub, 5 * 1)  # Ожидаемый результат: 5
+    def test_missing_currency_code(self):
+        transaction = {
+            "operationAmount": {
+                "amount": "50",
+                "currency": {}  # Нет кода валюты
+            }
+        }
+        result = get_transaction_amount(transaction)
+        self.assertEqual(result, 50)  # Предполагается, что это в рублях
 
-if __name__ == '__main__':
+    def test_invalid_amount(self):
+        transaction = {
+            "operationAmount": {
+                "amount": "abc",
+                "currency": {"name": "EUR", "code": "EUR"}
+            }
+        }
+        with self.assertRaises(ValueError):
+            get_transaction_amount(transaction)
+
+if __name__ == "__main__":
     unittest.main()
