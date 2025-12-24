@@ -1,34 +1,29 @@
 import json
 import os
-from .external_api import convert_to_rubles
 
-def load_transactions_from_file(file_path):
-    """
-    Загружает список транзакций из файла JSON.
-    Возвращает пустой список, если файл пустой, содержит не список или не найден.
-    """
-    if not os.path.exists(file_path):
-        return []
-
+def load_transactions_simple(file_path):
+    """ Функция для загрузки транзакций из JSON """
     try:
+
         with open(file_path, 'r', encoding='utf-8') as f:
             data = json.load(f)
-        if isinstance(data, list):
-            return data
-        else:
-            return []
-    except (json.JSONDecodeError, FileNotFoundError):
+            if isinstance(data, list):
+                return data
+            else:
+                print("Файл не содержит список.")
+                return []
+    except FileNotFoundError:
+        # Если файла нет, говорим об этом и возвращаем пустой список
+        print(f"Файл не найден: {file_path}")
+        return []
+    except json.JSONDecodeError:
+        # Если JSON некорректный (например, файл пустой или с ошибкой)
+        print(f"Ошибка в формате JSON файла: {file_path}")
+        return []
+    except Exception as e:
+        # Ловим любые другие ошибки на всякий случай
+        print(f"Произошла другая ошибка: {e}")
         return []
 
 
 
-
-from external_api import convert_to_rubles
-
-def get_transaction_amount_in_rubles(transaction):
-    """
-    Принимает словарь транзакции и возвращает сумму в рублях (float).
-    """
-    amount = float(transaction['amount'])
-    currency = transaction['currency']
-    return convert_to_rubles(amount, currency)
