@@ -2,8 +2,8 @@ import logging
 import os
 
 # Определяем путь к файлу логов. Создаем папку logs, если она не существует.
-log_dir = "logs"
-log_file = os.path.join(log_dir, "masks.log")
+log_path = "logs"
+log_file = os.path.join(log_path, "masks.log")
 
 # Создаем логер для модуля 'masks'
 logger = logging.getLogger('masks')
@@ -14,9 +14,9 @@ if not logger.handlers:
     logger.setLevel(logging.DEBUG)
 
     # Создаем папку для логов
-    if not os.path.exists(log_dir):
-        os.makedirs(log_dir)
-log_file = os.path.join(log_dir, "masks.log")
+    if not os.path.exists(log_path):
+        os.makedirs(log_path)
+log_file = os.path.join(log_path, "masks.log")
 file_handler = logging.FileHandler(log_file, mode='w', encoding ='utf-8')
 file_handler.setLevel(logging.DEBUG)
 formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')

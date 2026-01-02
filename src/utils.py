@@ -1,12 +1,9 @@
 import json
-import os
-import logging
 import logging.config
-from datetime import datetime
+import os
 
-
-logs_dir = "../logs"
-log_file = os.path.join(logs_dir, "utils.log")
+logs_path = "../logs"
+log_file = os.path.join(logs_path, "utils.log")
 # Создаем логгер
 logger = logging.getLogger(__name__)
 # Проверяем существуют ли уже обработчики у логов
@@ -14,8 +11,8 @@ if not logger.handlers:
     logger.setLevel(logging.DEBUG)
 
     # Создаем папку для логов
-    if not os.path.exists(logs_dir):
-         os.makedirs(logs_dir)
+    if not os.path.exists(logs_path):
+         os.makedirs(logs_path)
 
     # Настраиваем форматтер
     file_handler = logging.FileHandler(log_file, mode= 'w', encoding = 'utf-8')
