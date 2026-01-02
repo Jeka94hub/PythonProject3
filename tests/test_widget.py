@@ -1,4 +1,3 @@
-import pytest
 from src.widget import mask_account_card
 
 
@@ -14,4 +13,3 @@ def test_mask_account_card():
     result_account = mask_account_card(input_account)
     expected_account = "Счет **4305"
     assert result_account == expected_account, f"Ожидалось: {expected_account}, Получено: {result_account}"
-

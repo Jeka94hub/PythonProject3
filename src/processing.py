@@ -1,8 +1,7 @@
-
 from datetime import datetime
 
 
-def filter_by_state(records, state='EXECUTED'):
+def filter_by_state(records, state="EXECUTED"):
     """Фильтрует список записей по заданному состоянию.
     Args:
         records (list): список словарей, каждый из которых должен содержать ключ 'state'.
@@ -10,7 +9,7 @@ def filter_by_state(records, state='EXECUTED'):
     Returns:
         list: список словарей, удовлетворяющих условию фильтрации.
     """
-    return [record for record in records if record.get('state') == state]
+    return [record for record in records if record.get("state") == state]
 
 
 def sort_by_date(records, descending=True):
@@ -22,8 +21,9 @@ def sort_by_date(records, descending=True):
     Returns:
         list: отсортированный список словарей.
     """
+
     def get_date(record):
-        date_str = record.get('date')
+        date_str = record.get("date")
         if date_str:
             return datetime.fromisoformat(date_str)
         # элементы без 'date' должны идти в конец независимо от порядка
