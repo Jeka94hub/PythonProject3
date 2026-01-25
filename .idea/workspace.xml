@@ -5,21 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="44ecbe32-cd5d-4fcd-8613-926b8eee595d" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/reading_files.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/decorators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/external_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/external_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/generators.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/generators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/masks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/widget.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_decorators.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_decorators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_external_api.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_external_api.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_generators.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_generators.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_masks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_processing.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_processing.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test_widget.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_widget.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,11 +48,12 @@
     "Python tests.pytest in test_transaction_processor.py.executor": "Run",
     "Python tests.pytest in test_utils.py.executor": "Run",
     "Python.masks.executor": "Run",
+    "Python.reading_files.executor": "Run",
     "Python.utils.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "homework__12__2",
+    "git-widget-placeholder": "homework__13__1",
     "settings.editor.selected.configurable": "editor.preferences.import"
   }
 }]]></component>
@@ -74,7 +62,7 @@
       <recent name="C:\Users\Evgenii\PycharmProjects\PythonProject3_widget" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.masks">
+  <component name="RunManager" selected="Python.reading_files">
     <configuration name="masks" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject3_widget" />
       <option name="ENV_FILES" value="" />
@@ -89,6 +77,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/masks.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="reading_files" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject3_widget" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/reading_files.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -117,23 +127,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for tests.test_utils.test_simple_load_success" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject3_widget" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_utils.test_simple_load_success&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_transaction_processor.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
@@ -189,20 +182,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Python.reading_files" />
       <item itemvalue="Python.masks" />
       <item itemvalue="Python.utils" />
       <item itemvalue="Python tests.pytest in PyCharm 2025.2.0.1" />
       <item itemvalue="Python tests.pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_transaction_processor.py" />
       <item itemvalue="Python tests.pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_utils.py" />
-      <item itemvalue="Python tests.pytest for tests.test_utils.test_simple_load_success" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.reading_files" />
         <item itemvalue="Python.masks" />
         <item itemvalue="Python.utils" />
         <item itemvalue="Python tests.pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_transaction_processor.py" />
         <item itemvalue="Python tests.pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_utils.py" />
-        <item itemvalue="Python tests.pytest for tests.test_utils.test_simple_load_success" />
       </list>
     </recent_temporary>
   </component>
