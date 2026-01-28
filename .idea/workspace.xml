@@ -6,8 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="44ecbe32-cd5d-4fcd-8613-926b8eee595d" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/masks.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/masks.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,32 +35,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python tests.pytest for test_utils.test_load_transactions_simple.TestLoadTransactionsSimple.executor": "Run",
-    "Python tests.pytest for tests.test_generators.test_card_number_generator_various.executor": "Run",
-    "Python tests.pytest for tests.test_utils.test_load_transactions_simple.executor": "Run",
-    "Python tests.pytest for tests.test_utils.test_simple_load_success.executor": "Run",
-    "Python tests.pytest in test_external_api.py.executor": "Run",
-    "Python tests.pytest in test_transaction.py.executor": "Run",
-    "Python tests.pytest in test_transaction_processor.py.executor": "Run",
-    "Python tests.pytest in test_utils.py.executor": "Run",
-    "Python.masks.executor": "Run",
-    "Python.utils.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "homework__12__2",
-    "settings.editor.selected.configurable": "editor.preferences.import"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python tests.pytest for test_utils.test_load_transactions_simple.TestLoadTransactionsSimple.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for tests.test_generators.test_card_number_generator_various.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for tests.test_utils.test_load_transactions_simple.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest for tests.test_utils.test_simple_load_success.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_external_api.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_transaction.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_transaction_processor.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python tests.pytest in test_utils.py.executor&quot;: &quot;Run&quot;,
+    &quot;Python.masks.executor&quot;: &quot;Run&quot;,
+    &quot;Python.reading_files.executor&quot;: &quot;Run&quot;,
+    &quot;Python.utils.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;homework__13__1&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.import&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Evgenii\PycharmProjects\PythonProject3_widget" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.masks">
+  <component name="RunManager" selected="Python.reading_files">
     <configuration name="masks" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="PythonProject3_widget" />
       <option name="ENV_FILES" value="" />
@@ -77,6 +76,28 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/masks.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="reading_files" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="PythonProject3_widget" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/src" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/src/reading_files.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -105,23 +126,6 @@
       <option name="MODULE_MODE" value="false" />
       <option name="REDIRECT_INPUT" value="false" />
       <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
-    <configuration name="pytest for tests.test_utils.test_simple_load_success" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
-      <module name="PythonProject3_widget" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="_new_keywords" value="&quot;&quot;" />
-      <option name="_new_parameters" value="&quot;&quot;" />
-      <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;tests.test_utils.test_simple_load_success&quot;" />
-      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <configuration name="pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_transaction_processor.py" type="tests" factoryName="py.test" temporary="true" nameIsGenerated="true">
@@ -178,19 +182,19 @@
     </configuration>
     <list>
       <item itemvalue="Python.masks" />
+      <item itemvalue="Python.reading_files" />
       <item itemvalue="Python.utils" />
-      <item itemvalue="Python tests.pytest in PyCharm 2025.2.0.1" />
       <item itemvalue="Python tests.pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_transaction_processor.py" />
       <item itemvalue="Python tests.pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_utils.py" />
-      <item itemvalue="Python tests.pytest for tests.test_utils.test_simple_load_success" />
+      <item itemvalue="Python tests.pytest in PyCharm 2025.2.0.1" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.reading_files" />
         <item itemvalue="Python.masks" />
         <item itemvalue="Python.utils" />
         <item itemvalue="Python tests.pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_transaction_processor.py" />
         <item itemvalue="Python tests.pytest in C:/Users/Evgenii/PycharmProjects/PythonProject3_widget/tests/test_utils.py" />
-        <item itemvalue="Python tests.pytest for tests.test_utils.test_simple_load_success" />
       </list>
     </recent_temporary>
   </component>
